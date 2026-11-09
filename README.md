@@ -86,9 +86,11 @@ and tick "Add python.exe to PATH" in the installer.
 
 Do these on the mining PC, signed in as the Windows user who runs Kryptex:
 
-1. On this page, click **Code → Download ZIP**.
-2. In your Downloads folder, right-click `ha-kryptex-main.zip` → **Extract All** → **Extract**.
-3. Open the extracted folder and inside it the `bridge` folder. Windows may put a second `ha-kryptex-main` folder
+1. Open the [latest release](https://github.com/niemenjoki/ha-kryptex/releases/latest) and under **Assets** click
+   **Source code (zip)**. This bridge matches the integration version that HACS installs.
+2. In your Downloads folder, right-click the file, for example `ha-kryptex-1.0.0.zip` → **Extract All** →
+   **Extract**.
+3. Open the extracted folder and inside it the `bridge` folder. Windows may put a second `ha-kryptex-1.0.0` folder
    inside the first one: open it too.
 4. Double-click **`install.cmd`**. Windows asks for administrator rights (needed for the firewall rule and for
    starting and closing Kryptex, which runs as administrator): click Yes.
@@ -99,10 +101,12 @@ Do these on the mining PC, signed in as the Windows user who runs Kryptex:
 Lost the address, port or key? Run `install.cmd` again: it shows them again and changes nothing (the key is
 kept).
 
-If you use git: `git clone https://github.com/niemenjoki/ha-kryptex` and run `bridge\install.cmd`. `git pull`
-then gets updates.
+If you use git: `git clone https://github.com/niemenjoki/ha-kryptex`, check out the release you installed in HACS
+(for example `git checkout v1.0.0`) and run `bridge\install.cmd`. To update, `git fetch --tags` and check out the
+new release tag.
 
-To update the bridge later, download the new version and run `install.cmd` again. The API key is kept.
+To update the bridge later, download the new release's **Source code (zip)** and run `install.cmd` again. The API
+key is kept.
 
 ### What the installer does
 
