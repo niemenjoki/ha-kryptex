@@ -1,0 +1,60 @@
+[
+  {
+    "id": 101,
+    "device": {"id": 1, "type": "cpu", "vendor": "amd", "name": "AMD Ryzen 9 5900X 12-Core Processor",
+               "configuration": {"disabled": false}},
+    "reading": {"id": 101, "core_clock": 4061},
+    "state": {"state": "mining"},
+    "process": {
+      "id": 7, "pid": 1001, "started_at": 1790000000000,
+      "algorithm_combination": {
+        "id": 1,
+        "algorithms": [{"id": 1, "coin": "xmr", "algorithm": "randomx",
+                        "reading": {"hashrate": 11106.02, "profitability": 0.42, "shares": {"accepted": 6, "rejected": 0}}}],
+        "profitability": 0.42
+      },
+      "miner_version": {"id": 95, "miner": {"id": 3, "name": "xmrig"}, "version": "v6.26.0"}
+    },
+    "algorithm_combinations": []
+  },
+  {
+    "id": 102,
+    "device": {"id": 2, "type": "gpu", "vendor": "nvidia", "name": "NVIDIA GeForce RTX 3080 Ti", "memory_size": 12288,
+               "uuid": "GPU-00000000-0000-0000-0000-000000000002", "architecture": "Ampere",
+               "configuration": {"disabled": false}},
+    "reading": {"id": 102, "pci_address": "0a:00.0", "core_temperature": 83, "power_usage": 339, "core_clock": 1620,
+                "memory_clock": 9251, "fan_speed": 100, "rebar": false, "driver_version": "616.92"},
+    "state": {"state": "mining"},
+    "process": {
+      "id": 8, "pid": 1002, "started_at": 1790000000000,
+      "algorithm_combination": {
+        "id": 19,
+        "algorithms": [{"id": 19, "coin": "prl", "algorithm": "pearlhash",
+                        "reading": {"hashrate": 131780802595989.38, "profitability": 2.55}}],
+        "profitability": 2.55
+      },
+      "miner_version": {"id": 281, "miner": {"id": 7, "name": "peakminer"}, "version": "v2.20.5"}
+    },
+    "algorithm_combinations": []
+  },
+  {
+    "id": 103,
+    "device": {"id": 4, "type": "gpu", "vendor": "nvidia", "name": "NVIDIA GeForce RTX 3060", "memory_size": 12288,
+               "uuid": "GPU-00000000-0000-0000-0000-000000000004", "architecture": "Ampere",
+               "configuration": {"disabled": false}},
+    "reading": {"id": 103, "pci_address": "0b:00.0", "core_temperature": 72, "power_usage": 168, "core_clock": 1837,
+                "memory_clock": 7301, "fan_speed": 71, "rebar": false, "driver_version": "616.92"},
+    "state": {"state": "mining"},
+    "process": {
+      "id": 8, "pid": 1002, "started_at": 1790000000000,
+      "algorithm_combination": {
+        "id": 19,
+        "algorithms": [{"id": 19, "coin": "prl", "algorithm": "pearlhash",
+                        "reading": {"hashrate": 52404285440436.44, "profitability": 1.02}}],
+        "profitability": 1.02
+      },
+      "miner_version": {"id": 281, "miner": {"id": 7, "name": "peakminer"}, "version": "v2.20.5"}
+    },
+    "algorithm_combinations": []
+  }
+]

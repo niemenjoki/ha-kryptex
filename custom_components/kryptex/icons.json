@@ -1,0 +1,94 @@
+{
+  "entity": {
+    "binary_sensor": {
+      "running": {
+        "default": "mdi:application-outline",
+        "state": {
+          "on": "mdi:application"
+        }
+      },
+      "mining": {
+        "default": "mdi:pickaxe"
+      }
+    },
+    "sensor": {
+      "balance": {
+        "default": "mdi:wallet"
+      },
+      "withdrawable_balance": {
+        "default": "mdi:wallet-outline"
+      },
+      "daily_income": {
+        "default": "mdi:cash-plus"
+      },
+      "monthly_income": {
+        "default": "mdi:cash-multiple"
+      },
+      "balance_currency": {
+        "default": "mdi:wallet"
+      },
+      "withdrawable_balance_currency": {
+        "default": "mdi:wallet-outline"
+      },
+      "daily_income_currency": {
+        "default": "mdi:cash-plus"
+      },
+      "monthly_income_currency": {
+        "default": "mdi:cash-multiple"
+      },
+      "bitcoin_price": {
+        "default": "mdi:bitcoin"
+      },
+      "break_even_price": {
+        "default": "mdi:scale-balance"
+      },
+      "electricity_cost": {
+        "default": "mdi:flash"
+      },
+      "net_profit": {
+        "default": "mdi:cash-check"
+      },
+      "device_state": {
+        "default": "mdi:list-status"
+      },
+      "device_algorithm": {
+        "default": "mdi:function-variant"
+      },
+      "device_miner": {
+        "default": "mdi:application-cog-outline"
+      },
+      "device_hashrate": {
+        "default": "mdi:speedometer"
+      },
+      "device_daily_income": {
+        "default": "mdi:cash-plus"
+      },
+      "device_daily_income_currency": {
+        "default": "mdi:cash-plus"
+      },
+      "device_fan": {
+        "default": "mdi:fan"
+      },
+      "device_core_clock": {
+        "default": "mdi:sine-wave"
+      },
+      "device_memory_clock": {
+        "default": "mdi:sine-wave"
+      }
+    },
+    "switch": {
+      "mining": {
+        "default": "mdi:application-outline",
+        "state": {
+          "on": "mdi:application"
+        }
+      },
+      "paused": {
+        "default": "mdi:play-circle-outline",
+        "state": {
+          "on": "mdi:pause-circle"
+        }
+      }
+    }
+  }
+}

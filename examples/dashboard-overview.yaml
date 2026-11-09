@@ -1,0 +1,51 @@
+# Overview card for a sections dashboard: Edit dashboard -> Add card -> Manual, and paste this.
+#
+# If your Kryptex entity ids do not start with "kryptex_" (Settings -> Devices & services -> Kryptex ->
+# entities), replace it. Remove the "_in_eur" rows if you chose no display currency, and the profitability rows if
+# you set no power sensor. Uses only built-in cards.
+
+type: grid
+cards:
+  - type: heading
+    heading: Kryptex
+    icon: mdi:pickaxe
+    badges:
+      - type: entity
+        entity: binary_sensor.kryptex_mining
+        show_state: true
+  - type: tile
+    entity: sensor.kryptex_balance
+    name: Balance
+  - type: tile
+    entity: sensor.kryptex_balance_in_eur
+    name: Balance €
+  - type: tile
+    entity: sensor.kryptex_daily_income
+    name: Income / day
+  - type: tile
+    entity: sensor.kryptex_daily_income_in_eur
+    name: Income / day €
+  - type: tile
+    entity: sensor.kryptex_break_even_electricity_price
+    name: Break-even price
+  - type: tile
+    entity: sensor.kryptex_net_profit_per_day
+    name: Net profit / day
+  - type: tile
+    entity: switch.kryptex_paused
+    name: Pause mining
+    grid_options:
+      columns: 12
+  - type: tile
+    entity: update.kryptex_kryptex
+    name: Kryptex version
+    grid_options:
+      columns: 12
+  - type: history-graph
+    title: Income and electricity price
+    hours_to_show: 48
+    entities:
+      - entity: sensor.kryptex_break_even_electricity_price
+        name: Break-even
+      - entity: sensor.electricity_total_price
+        name: Electricity price

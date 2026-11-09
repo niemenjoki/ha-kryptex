@@ -1,0 +1,52 @@
+# Pause mining when electricity costs more than mining earns, and resume when it is cheaper again.
+#
+# Uses only Kryptex's own pause: the Kryptex app and the PC stay on. Needs the integration options
+# "Display currency" and "Power of the mining PC", and an electricity price sensor in the same unit as the
+# break-even price (choose that unit in the options).
+#
+# Replace the entity ids:
+#   sensor.kryptex_break_even_electricity_price  -> your break-even price sensor
+#   switch.kryptex_paused                        -> your Kryptex "Paused" switch
+#   sensor.electricity_total_price               -> your total electricity price (incl. transfer and fees)
+#
+# While paused, the break-even price uses Kryptex's income estimate and the PC's power while mining, so the
+# resume rule works.
+# The 10 minute delays avoid pausing and resuming on short price spikes.
+
+alias: "Kryptex: pause when unprofitable"
+description: Pauses Kryptex mining while electricity costs more than the break-even price.
+mode: single
+triggers:
+  - trigger: template
+    id: pause
+    value_template: >-
+      {{ has_value('sensor.electricity_total_price')
+         and has_value('sensor.kryptex_break_even_electricity_price')
+         and states('sensor.electricity_total_price') | float
+             > states('sensor.kryptex_break_even_electricity_price') | float }}
+    for: "00:10:00"
+  - trigger: template
+    id: resume
+    value_template: >-
+      {{ has_value('sensor.electricity_total_price')
+         and has_value('sensor.kryptex_break_even_electricity_price')
+         and states('sensor.electricity_total_price') | float
+             < states('sensor.kryptex_break_even_electricity_price') | float }}
+    for: "00:10:00"
+conditions: []
+actions:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id: pause
+        sequence:
+          - action: switch.turn_on
+            target:
+              entity_id: switch.kryptex_paused
+      - conditions:
+          - condition: trigger
+            id: resume
+        sequence:
+          - action: switch.turn_off
+            target:
+              entity_id: switch.kryptex_paused

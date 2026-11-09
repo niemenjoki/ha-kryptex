@@ -1,0 +1,171 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "Kryptex-sillan koneen osoite (IP-osoite tai koneen nimi .local-päätteellä, esim. MYPC.local) ja API-avain. Jos ne ovat hukassa, aja install.cmd koneella uudelleen.",
+        "data": {
+          "host": "Osoite",
+          "port": "Portti",
+          "api_key": "API-avain"
+        }
+      },
+      "reauth_confirm": {
+        "description": "Silta hylkäsi API-avaimen. Anna avain koneen config.json-tiedostosta.",
+        "data": {
+          "api_key": "API-avain"
+        }
+      },
+      "reconfigure": {
+        "description": "Sillan uusi osoite tai portti. Jätä API-avain tyhjäksi, jos se ei muutu.",
+        "data": {
+          "host": "Osoite",
+          "port": "Portti",
+          "api_key": "API-avain"
+        },
+        "data_description": {
+          "api_key": "Tyhjä: nykyinen avain säilyy."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Silta ei vastannut. Tarkista, että kone on päällä, osoite ja portti sekä palomuurisääntö.",
+      "invalid_auth": "Silta hylkäsi API-avaimen."
+    },
+    "abort": {
+      "already_configured": "Tämä silta on jo lisätty.",
+      "reauth_successful": "API-avain päivitettiin.",
+      "reconfigure_successful": "Sillan asetukset päivitettiin."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "description": "Kryptex pitää saldon bitcoineina. Valitse valuutta, jos haluat summat myös muunnettuina Kryptexin omalla bitcoinin kurssilla. Kannattavuutta varten valitse anturi, joka mittaa koko louhintakoneen tehon, ja halutessasi sähkön kokonaishinta siirtoineen ja muine maksuineen.",
+        "data": {
+          "currency": "Näyttövaluutta",
+          "power_entity": "Louhintakoneen teho",
+          "price_entity": "Sähkön kokonaishinta",
+          "price_unit": "Sähkön hinnan yksikkö"
+        },
+        "data_description": {
+          "power_entity": "Antaa kannattavuusrajan. Kryptex ilmoittaa vain näytönohjainten tehon, joten käytä älypistorasiaa tai mittaria.",
+          "price_entity": "Lisää sähkökulun ja nettotuoton vuorokaudessa."
+        }
+      }
+    },
+    "error": {
+      "currency_required": "Kannattavuus tarvitsee näyttövaluutan.",
+      "power_required": "Valitse myös tehoanturi: kulu ja tuotto tarvitsevat sitä."
+    }
+  },
+  "selector": {
+    "currency": {
+      "options": {
+        "none": "Vain BTC"
+      }
+    },
+    "price_unit": {
+      "options": {
+        "currency_per_kwh": "Valuuttaa / kWh (esim. EUR/kWh)",
+        "cents_per_kwh": "Senttiä / kWh (esim. c/kWh)"
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "running": {
+        "name": "Sovellus käynnissä"
+      },
+      "mining": {
+        "name": "Louhii"
+      }
+    },
+    "sensor": {
+      "balance": {
+        "name": "Saldo"
+      },
+      "withdrawable_balance": {
+        "name": "Nostettava saldo"
+      },
+      "daily_income": {
+        "name": "Päivätuotto"
+      },
+      "monthly_income": {
+        "name": "Kuukausituotto"
+      },
+      "balance_currency": {
+        "name": "Saldo ({currency})"
+      },
+      "withdrawable_balance_currency": {
+        "name": "Nostettava saldo ({currency})"
+      },
+      "daily_income_currency": {
+        "name": "Päivätuotto ({currency})"
+      },
+      "monthly_income_currency": {
+        "name": "Kuukausituotto ({currency})"
+      },
+      "bitcoin_price": {
+        "name": "Bitcoinin hinta"
+      },
+      "break_even_price": {
+        "name": "Kannattavuusraja"
+      },
+      "electricity_cost": {
+        "name": "Sähkökulu vuorokaudessa"
+      },
+      "net_profit": {
+        "name": "Nettotuotto vuorokaudessa"
+      },
+      "device_state": {
+        "name": "Tila"
+      },
+      "device_algorithm": {
+        "name": "Algoritmi"
+      },
+      "device_miner": {
+        "name": "Louhintaohjelma"
+      },
+      "device_hashrate": {
+        "name": "Hashrate"
+      },
+      "device_daily_income": {
+        "name": "Päivätuotto"
+      },
+      "device_daily_income_currency": {
+        "name": "Päivätuotto ({currency})"
+      },
+      "device_temperature": {
+        "name": "Lämpötila"
+      },
+      "device_memory_temperature": {
+        "name": "Muistin lämpötila"
+      },
+      "device_power": {
+        "name": "Teho"
+      },
+      "device_fan": {
+        "name": "Tuuletin"
+      },
+      "device_core_clock": {
+        "name": "Ytimen kellotaajuus"
+      },
+      "device_memory_clock": {
+        "name": "Muistin kellotaajuus"
+      }
+    },
+    "switch": {
+      "mining": {
+        "name": "Kryptex-sovellus"
+      },
+      "paused": {
+        "name": "Tauko"
+      }
+    },
+    "update": {
+      "app_update": {
+        "name": "Kryptex"
+      }
+    }
+  }
+}

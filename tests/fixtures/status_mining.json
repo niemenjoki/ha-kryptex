@@ -1,0 +1,152 @@
+{
+  "ok": true,
+  "version": "1.0.0",
+  "running": true,
+  "profitability": {
+    "ok": true,
+    "daily_btc": 8e-06,
+    "monthly_btc": 0.00024,
+    "daily_usd": 0.8,
+    "monthly_usd": 24.0,
+    "measured_at": "2026-09-21T13:33:15.000Z",
+    "measurement_age_seconds": 5.0,
+    "coefficient_updated_at": "2026-09-21T12:33:20.000Z",
+    "device_count": 2,
+    "devices": [
+      {
+        "id": "2",
+        "name": "NVIDIA GeForce RTX 3080 Ti",
+        "coin": "prl",
+        "algorithm": "pearlhash",
+        "hashrate": 131780802595989.4,
+        "daily_btc": 3e-06,
+        "daily_usd": 0.3
+      },
+      {
+        "id": "1",
+        "name": "AMD Ryzen 9 5900X 12-Core Processor",
+        "coin": "xmr",
+        "algorithm": "randomx",
+        "hashrate": 11106.0,
+        "daily_btc": 5e-06,
+        "daily_usd": 0.5
+      }
+    ]
+  },
+  "estimate": {
+    "ok": true,
+    "daily_btc": 8e-06,
+    "monthly_btc": 0.00024,
+    "daily_usd": 0.8,
+    "monthly_usd": 24.0,
+    "coefficient_updated_at": "2026-09-21T12:33:20.000Z",
+    "device_count": 2,
+    "hashrate_measured_at": "2026-09-21T13:33:15.000Z",
+    "devices": [
+      {
+        "id": "2",
+        "name": "NVIDIA GeForce RTX 3080 Ti",
+        "coin": "prl",
+        "algorithm": "pearlhash",
+        "hashrate": 131780802595989.4,
+        "daily_btc": 3e-06,
+        "daily_usd": 0.3
+      },
+      {
+        "id": "1",
+        "name": "AMD Ryzen 9 5900X 12-Core Processor",
+        "coin": "xmr",
+        "algorithm": "randomx",
+        "hashrate": 11106.0,
+        "daily_btc": 5e-06,
+        "daily_usd": 0.5
+      }
+    ]
+  },
+  "balance": {
+    "ok": true,
+    "total_btc": 0.00012345,
+    "withdrawable_btc": 0.0001,
+    "total_usd": 12.35,
+    "withdrawable_usd": 10.0,
+    "updated_at": "2026-09-21T13:23:20.000Z",
+    "age_seconds": 600.0
+  },
+  "rates": {
+    "ok": true,
+    "btc_price": {
+      "eur": 90000.0,
+      "usd": 100000.0
+    },
+    "updated_at": "2026-09-21T13:31:20.000Z"
+  },
+  "service": {
+    "ok": true,
+    "version": "5.10.7",
+    "update": {
+      "available": false,
+      "version": null
+    },
+    "paused": false,
+    "devices": [
+      {
+        "id": "1",
+        "name": "AMD Ryzen 9 5900X 12-Core Processor",
+        "type": "cpu",
+        "vendor": "amd",
+        "architecture": null,
+        "memory_mb": null,
+        "enabled": true,
+        "state": "mining",
+        "temperature": null,
+        "memory_temperature": null,
+        "power": null,
+        "fan": null,
+        "core_clock": 4061.0,
+        "memory_clock": null,
+        "miner": "xmrig",
+        "miner_version": "v6.26.0",
+        "algorithms": [
+          {
+            "coin": "xmr",
+            "algorithm": "randomx",
+            "hashrate": 11106.02
+          }
+        ],
+        "coin": "xmr",
+        "algorithm": "randomx",
+        "hashrate": 11106.02,
+        "daily_btc": 4.2e-06
+      },
+      {
+        "id": "2",
+        "name": "NVIDIA GeForce RTX 3080 Ti",
+        "type": "gpu",
+        "vendor": "nvidia",
+        "architecture": "Ampere",
+        "memory_mb": 12288.0,
+        "enabled": true,
+        "state": "mining",
+        "temperature": 83.0,
+        "memory_temperature": null,
+        "power": 339.0,
+        "fan": 100.0,
+        "core_clock": 1620.0,
+        "memory_clock": 9251.0,
+        "miner": "peakminer",
+        "miner_version": "v2.20.5",
+        "algorithms": [
+          {
+            "coin": "prl",
+            "algorithm": "pearlhash",
+            "hashrate": 131780802595989.38
+          }
+        ],
+        "coin": "prl",
+        "algorithm": "pearlhash",
+        "hashrate": 131780802595989.38,
+        "daily_btc": 2.55e-05
+      }
+    ]
+  }
+}

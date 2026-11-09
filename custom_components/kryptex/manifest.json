@@ -1,0 +1,12 @@
+{
+  "domain": "kryptex",
+  "name": "Kryptex",
+  "codeowners": ["@niemenjoki"],
+  "config_flow": true,
+  "documentation": "https://github.com/niemenjoki/ha-kryptex",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/niemenjoki/ha-kryptex/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

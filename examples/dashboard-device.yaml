@@ -1,0 +1,41 @@
+# One mining device (GPU or CPU). Kryptex creates one Home Assistant device per mining device; copy this card
+# once per device and replace "nvidia_geforce_rtx_3080_ti" with the start of that device's entity ids.
+# A CPU has no temperature, power or fan entities (Kryptex does not report them): leave those rows out.
+
+type: grid
+cards:
+  - type: heading
+    heading: NVIDIA GeForce RTX 3080 Ti
+    icon: mdi:expansion-card
+    badges:
+      - type: entity
+        entity: sensor.nvidia_geforce_rtx_3080_ti_state
+        show_state: true
+  - type: tile
+    entity: sensor.nvidia_geforce_rtx_3080_ti_algorithm
+    name: Algorithm
+  - type: tile
+    entity: sensor.nvidia_geforce_rtx_3080_ti_daily_income
+    name: Income / day
+  - type: gauge
+    entity: sensor.nvidia_geforce_rtx_3080_ti_temperature
+    name: Temperature
+    min: 30
+    max: 95
+    needle: true
+    severity:
+      green: 30
+      yellow: 75
+      red: 85
+  - type: gauge
+    entity: sensor.nvidia_geforce_rtx_3080_ti_power
+    name: Power
+    min: 0
+    max: 400
+    needle: true
+  - type: tile
+    entity: sensor.nvidia_geforce_rtx_3080_ti_fan
+    name: Fan
+  - type: tile
+    entity: sensor.nvidia_geforce_rtx_3080_ti_hashrate
+    name: Hashrate

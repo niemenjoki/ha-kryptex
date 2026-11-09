@@ -1,0 +1,171 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "Address of the PC that runs the Kryptex bridge (its IP address, or its name with .local, e.g. MYPC.local), and the API key. Run install.cmd on the PC again if you no longer have them.",
+        "data": {
+          "host": "Host",
+          "port": "Port",
+          "api_key": "API key"
+        }
+      },
+      "reauth_confirm": {
+        "description": "The bridge rejected the API key. Enter the key from config.json on the PC.",
+        "data": {
+          "api_key": "API key"
+        }
+      },
+      "reconfigure": {
+        "description": "New address or port of the bridge. Leave the API key empty to keep the current one.",
+        "data": {
+          "host": "Host",
+          "port": "Port",
+          "api_key": "API key"
+        },
+        "data_description": {
+          "api_key": "Empty: the current key is kept."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "The bridge did not answer. Check that the PC is on, the address and port, and the firewall rule.",
+      "invalid_auth": "The bridge rejected the API key."
+    },
+    "abort": {
+      "already_configured": "This bridge is already configured.",
+      "reauth_successful": "The API key was updated.",
+      "reconfigure_successful": "The bridge settings were updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "description": "Kryptex keeps your balance in bitcoin. Choose a currency to also get the amounts converted with Kryptex's own bitcoin rate. For profitability, choose a sensor that measures the whole mining PC's power, and optionally your total electricity price including transfer and other fees.",
+        "data": {
+          "currency": "Display currency",
+          "power_entity": "Power of the mining PC",
+          "price_entity": "Total electricity price",
+          "price_unit": "Unit of the electricity price"
+        },
+        "data_description": {
+          "power_entity": "Gives the break-even electricity price. Kryptex reports only GPU power, so use a smart plug or meter.",
+          "price_entity": "Adds electricity cost and net profit per day."
+        }
+      }
+    },
+    "error": {
+      "currency_required": "Profitability needs a display currency.",
+      "power_required": "Choose the power sensor too: cost and profit need it."
+    }
+  },
+  "selector": {
+    "currency": {
+      "options": {
+        "none": "BTC only"
+      }
+    },
+    "price_unit": {
+      "options": {
+        "currency_per_kwh": "Currency per kWh (e.g. EUR/kWh)",
+        "cents_per_kwh": "Cents per kWh (e.g. c/kWh)"
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "running": {
+        "name": "App running"
+      },
+      "mining": {
+        "name": "Mining"
+      }
+    },
+    "sensor": {
+      "balance": {
+        "name": "Balance"
+      },
+      "withdrawable_balance": {
+        "name": "Withdrawable balance"
+      },
+      "daily_income": {
+        "name": "Daily income"
+      },
+      "monthly_income": {
+        "name": "Monthly income"
+      },
+      "balance_currency": {
+        "name": "Balance in {currency}"
+      },
+      "withdrawable_balance_currency": {
+        "name": "Withdrawable balance in {currency}"
+      },
+      "daily_income_currency": {
+        "name": "Daily income in {currency}"
+      },
+      "monthly_income_currency": {
+        "name": "Monthly income in {currency}"
+      },
+      "bitcoin_price": {
+        "name": "Bitcoin price"
+      },
+      "break_even_price": {
+        "name": "Break-even electricity price"
+      },
+      "electricity_cost": {
+        "name": "Electricity cost per day"
+      },
+      "net_profit": {
+        "name": "Net profit per day"
+      },
+      "device_state": {
+        "name": "State"
+      },
+      "device_algorithm": {
+        "name": "Algorithm"
+      },
+      "device_miner": {
+        "name": "Miner"
+      },
+      "device_hashrate": {
+        "name": "Hashrate"
+      },
+      "device_daily_income": {
+        "name": "Daily income"
+      },
+      "device_daily_income_currency": {
+        "name": "Daily income in {currency}"
+      },
+      "device_temperature": {
+        "name": "Temperature"
+      },
+      "device_memory_temperature": {
+        "name": "Memory temperature"
+      },
+      "device_power": {
+        "name": "Power"
+      },
+      "device_fan": {
+        "name": "Fan"
+      },
+      "device_core_clock": {
+        "name": "Core clock"
+      },
+      "device_memory_clock": {
+        "name": "Memory clock"
+      }
+    },
+    "switch": {
+      "mining": {
+        "name": "Kryptex app"
+      },
+      "paused": {
+        "name": "Paused"
+      }
+    },
+    "update": {
+      "app_update": {
+        "name": "Kryptex"
+      }
+    }
+  }
+}
